@@ -49,7 +49,7 @@ Modifikasi, fine-tuning, dan publikasi SorachioLM dilakukan oleh Izzul Fahmi.
 
 Kontribusi & Kontak
 
-Proyek ini bersifat terbuk untuk eksperimen lanjutan.
+Proyek ini bersifat terbuka untuk eksperimen lanjutan.
 Silakan hubungi saya melalui GitHub untuk kolaborasi atau feedback:
 
 > GitHub: IzzulGod
