@@ -92,7 +92,7 @@ SorachioLM berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembang
 ---
 
 
-**Pengujian Performa pada Perangkat Low-End**
+## Pengujian Performa pada Perangkat Low-End
 
 Spesifikasi Perangkat Uji:
 
