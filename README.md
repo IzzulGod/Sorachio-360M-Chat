@@ -87,6 +87,7 @@ Response: I'm Sorachio, an AI assistant developed by Izzul Fahmi from Sorachio A
 ```
 
 **Hasil Pengujian**
+
 SorachioLM berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembangkan oleh Izzul Fahmi, serta mampu memberikan respons yang natural, konsisten, dan sesuai dengan karakter yang telah didefinisikan dalam dataset fine-tuning.
 
 ---
