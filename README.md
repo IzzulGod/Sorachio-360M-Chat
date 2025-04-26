@@ -36,6 +36,64 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
   
 ---
 
+Pengujian Performa pada Perangkat Low-End
+
+Spesifikasi Perangkat Uji:
+
+CPU: AMD A4-9120 (2 core, 2 thread @ 2.2GHz)
+
+RAM: 4GB DDR4
+
+Storage: 500GB HDD
+
+OS: Windows 10 Pro 64-bit
+
+Quantization: 8-bit (Q8_0) GGUF
+
+Context Length: ~4000 tokens
+
+
+Hasil Pengujian:
+
+Model mampu berjalan dengan lancar tanpa screen recording.
+
+Respon cepat, dengan waktu hampir instan dari input ke output.
+
+Utilisasi CPU saat inferensi cukup tinggi (~84–100%), namun tetap stabil.
+
+
+Saat Melakukan Screen Recording:
+
+CPU mencapai 100% utilization.
+
+Terjadi delay sekitar 2–4 detik untuk memulai proses generate.
+
+Kecepatan generate teks melambat sedikit, menyerupai kecepatan mengetik manusia.
+
+
+
+---
+
+Dokumentasi Pengujian
+
+Inferensi Model (tanpa pengaruh screen recording):
+
+![Inference Screenshot](assets/sorachio-inference-ss.png)
+
+
+---
+
+Screen Recording (dengan pengaruh screen recording):
+
+![Inference Demo GIF](assets/sorachio-inference-demo.gif)
+
+
+> Catatan: Delay yang terlihat pada screen recording disebabkan oleh beban CPU tambahan dari proses perekaman layar.
+Saat tidak melakukan recording, model berjalan lebih lancar dan responsif.
+
+---
+
+
 Lisensi & Atribusi
 
 >Model ini merupakan karya turunan dari:
