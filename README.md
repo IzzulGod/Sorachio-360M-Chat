@@ -56,20 +56,20 @@ Context Length: ~4096 tokens
 
 Hasil Pengujian:
 
--Model mampu berjalan dengan lancar jika dijalankan tanpa screen recording atau multitasking berat lainnya.
+- Model mampu berjalan dengan lancar jika dijalankan tanpa screen recording atau multitasking berat lainnya.
 
--Respon cepat, dengan waktu hampir instan dari input ke output.
+- Respon cepat, dengan waktu hampir instan dari input ke output.
 
--Utilisasi CPU saat inferensi cukup tinggi (~84–100%), namun tetap stabil.
+- Utilisasi CPU saat inferensi cukup tinggi (~84–100%), namun tetap stabil.
 
 
 Saat Melakukan Screen Recording:
 
--CPU langsung mencapai 100% utilization.
+- CPU langsung mencapai 100% utilization.
 
--Terjadi delay sekitar 3–5 detik untuk memulai proses generate.
+- Terjadi delay sekitar 3–5 detik untuk memulai proses generate.
 
--Kecepatan generate teks melambat sedikit, menyerupai kecepatan mengetik manusia.
+- Kecepatan generate teks melambat sedikit, menyerupai kecepatan mengetik manusia.
 
 
 ---
