@@ -39,17 +39,17 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
 
 Spesifikasi Perangkat Uji:
 
-CPU: AMD A4-9120 (2 core, 2 thread @ 2.2GHz)
+- CPU: AMD A4-9120 (2 core, 2 thread @ 2.2GHz)
 
-RAM: 4GB DDR4
+- RAM: 4GB DDR4
 
-Storage: 500GB HDD
+- Storage: 500GB HDD
 
-OS: Windows 10 Pro 64-bit
+- OS: Windows 10 Pro 64-bit
 
-Quantization: 8-bit (Q8_0) GGUF
+-:Quantization: 8-bit (Q8_0) GGUF
 
-Context Length: ~4096 tokens
+- Context Length: ~4096 tokens
 
 ---
 
@@ -95,7 +95,7 @@ Modifikasi, fine-tuning, dan publikasi SorachioLM dilakukan oleh Izzul Fahmi.
 
 ---
 
-Kontribusi & Kontak
+**Kontribusi & Kontak**
 
 Proyek ini bersifat terbuka untuk eksperimen lanjutan.
 Silakan hubungi saya melalui GitHub untuk kolaborasi atau feedback:
