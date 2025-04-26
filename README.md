@@ -37,7 +37,7 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
 
 **Pengujian Respon pada Identitas**
 
-'''
+```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
@@ -69,13 +69,13 @@ start_token = "<|im_start|>assistant\n"
 end_token = "<|im_end|>"
 
 if start_token in decoded:
-
     response_only = decoded.split(start_token)[-1].split(end_token)[0].strip()
 else:
     response_only = decoded.strip()
 
 print(f"Response:\n{response_only}")
-'''
+```
+
 
 ---
 
