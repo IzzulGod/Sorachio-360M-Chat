@@ -60,7 +60,7 @@ Hasil Pengujian:
 
 - Respon cepat, dengan waktu hampir instan dari input ke output.
 
-- Utilisasi CPU saat inferensi cukup tinggi (~84–100%), namun tetap stabil.
+- Utilisasi CPU saat inferensi cukup tinggi (~77–93%), namun tetap stabil.
 
 
 Saat Melakukan Screen Recording:
