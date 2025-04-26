@@ -50,7 +50,7 @@ OS: Windows 10 Pro 64-bit
 
 Quantization: 8-bit (Q8_0) GGUF
 
-Context Length: ~4000 tokens
+Context Length: ~4096 tokens
 
 
 Hasil Pengujian:
@@ -79,14 +79,6 @@ Dokumentasi Pengujian
 Inferensi Model (tanpa pengaruh screen recording):
 
 ![Inference Screenshot](assets/sorachio-inference-ss.png)
-
-
----
-
-Screen Recording (dengan pengaruh screen recording):
-
-![Inference Demo GIF](assets/sorachio-inference-demo.gif)
-
 
 > Catatan: Delay yang terlihat pada screen recording disebabkan oleh beban CPU tambahan dari proses perekaman layar.
 Saat tidak melakukan recording, model berjalan lebih lancar dan responsif.
