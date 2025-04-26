@@ -1,9 +1,8 @@
 # SorachioLM 
 
 **SorachioLM** adalah model bahasa besar berukuran ringan yang dikembangkan melalui fine-tuning terhadap model [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct).  
-Model ini dirancang untuk merepresentasikan karakter AI bernama **Sorachio**, yang mampu menjalankan percakapan interaktif dan menyampaikan informasi dengan gaya khas identitas Sorachio.
 
-Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara lokal, termasuk pengembangan robot companion berbasis SBC (Single Board Computer) serta integrasi ke dalam aplikasi ringan yang menggunakan arsitektur LLM (Large Language Model).
+Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara **lokal**, termasuk pengembangan robot companion berbasis SBC (Single Board Computer) serta integrasi ke dalam aplikasi ringan yang menggunakan arsitektur LLM (Large Language Model).
 
 ---
 
@@ -32,11 +31,11 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
 - Melakukan fine-tuning menggunakan dataset custom yang dirancang khusus.
 - Mengintegrasikan identitas karakter *Sorachio* melalui instruction tuning berbasis identitas, serta diperkuat melalui penyesuaian prompt dan format dialog.
 - Melakukan modifikasi metadata model dan tokenizer untuk mencerminkan identitas baru.
-- Menyediakan model dalam dua format: `.safetensors` untuk inference standar, dan `.gguf` untuk kompatibilitas dengan sistem LLM offline seperti LM Studio.
+- Menyediakan model dalam dua format: `.safetensors` untuk inference standar, dan `.gguf` untuk kompatibilitas dengan sistem LLM offline seperti llama.cpp dan LM Studio.
   
 ---
 
-Pengujian Performa pada Perangkat Low-End
+**Pengujian Performa pada Perangkat Low-End**
 
 Spesifikasi Perangkat Uji:
 
@@ -56,32 +55,31 @@ Context Length: ~4096 tokens
 
 Hasil Pengujian:
 
-- Model mampu berjalan dengan lancar jika dijalankan tanpa screen recording atau multitasking berat lainnya.
+- Model mampu berjalan dengan baik dan responsif saat dijalankan tanpa aktivitas multitasking berat
 
 - Respon cepat, dengan waktu hampir instan dari input ke output.
 
-- Utilisasi CPU saat inferensi cukup tinggi (~77–93%), namun tetap stabil.
-
+- Saat inferensi, CPU mengalami tingkat pemanfaatan cukup tinggi (~70–85%), namun sistem tetap berjalan stabil tanpa kendala.
 
 Saat Melakukan Screen Recording:
 
-- CPU langsung mencapai 100% utilization.
+- CPU mencapai 100% utilisasi karena tambahan beban perekaman layar.
 
-- Terjadi delay sekitar 3–5 detik untuk memulai proses generate.
+
+- Terjadi delay sekitar 4–7 detik untuk memulai proses generate.
 
 - Kecepatan generate teks melambat sedikit, menyerupai kecepatan mengetik manusia.
 
 
 ---
 
-Dokumentasi Pengujian
+**Dokumentasi Pengujian**
 
 Inferensi Model :
 
 ![Inference Screenshot](assets/sorachio-inference-ss.png)
 
-> Catatan: Delay yang terlihat disebabkan oleh beban CPU tambahan dari proses perekaman layar.
-Saat tidak melakukan recording, model berjalan lebih lancar dan responsif.
+> Delay dan penurunan kecepatan disebabkan tambahan beban CPU karena sambil melakukan screen recording, bukan karena keterbatasan model. Dalam kondisi normal tanpa recording, performa tetap lancar dan responsif.
 
 ---
 
