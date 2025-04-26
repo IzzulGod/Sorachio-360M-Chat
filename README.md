@@ -56,40 +56,39 @@ Context Length: ~4096 tokens
 
 Hasil Pengujian:
 
-Model mampu berjalan dengan lancar tanpa screen recording.
+-Model mampu berjalan dengan lancar jika dijalankan tanpa screen recording atau multitasking berat lainnya.
 
-Respon cepat, dengan waktu hampir instan dari input ke output.
+-Respon cepat, dengan waktu hampir instan dari input ke output.
 
-Utilisasi CPU saat inferensi cukup tinggi (~84–100%), namun tetap stabil.
+-Utilisasi CPU saat inferensi cukup tinggi (~84–100%), namun tetap stabil.
 
 
 Saat Melakukan Screen Recording:
 
-CPU mencapai 100% utilization.
+-CPU langsung mencapai 100% utilization.
 
-Terjadi delay sekitar 2–4 detik untuk memulai proses generate.
+-Terjadi delay sekitar 3–5 detik untuk memulai proses generate.
 
-Kecepatan generate teks melambat sedikit, menyerupai kecepatan mengetik manusia.
-
+-Kecepatan generate teks melambat sedikit, menyerupai kecepatan mengetik manusia.
 
 
 ---
 
 Dokumentasi Pengujian
 
-Inferensi Model (tanpa pengaruh screen recording):
+Inferensi Model :
 
 ![Inference Screenshot](assets/sorachio-inference-ss.png)
 
-> Catatan: Delay yang terlihat pada screen recording disebabkan oleh beban CPU tambahan dari proses perekaman layar.
+> Catatan: Delay yang terlihat disebabkan oleh beban CPU tambahan dari proses perekaman layar.
 Saat tidak melakukan recording, model berjalan lebih lancar dan responsif.
 
 ---
 
 
-Lisensi & Atribusi
+## Lisensi & Atribusi
 
->Model ini merupakan karya turunan dari:
+Model ini merupakan karya turunan dari:
 SmolLM2-360M-Instruct
 Hak cipta oleh HuggingFaceTB – dilisensikan di bawah Apache License 2.0.
 
