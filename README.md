@@ -37,7 +37,8 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
 
 **Pengujian Respon pada Identitas**
 
-'''from transformers import AutoTokenizer, AutoModelForCausalLM
+'''
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 model_path = "/content/drive/MyDrive/SorachioLM/models"
@@ -73,7 +74,8 @@ if start_token in decoded:
 else:
     response_only = decoded.strip()
 
-print(f"Response:\n{response_only}")'''
+print(f"Response:\n{response_only}")
+'''
 
 ---
 
