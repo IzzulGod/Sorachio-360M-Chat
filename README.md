@@ -47,7 +47,7 @@ Spesifikasi Perangkat Uji:
 
 - OS: Windows 10 Pro 64-bit
 
--:Quantization: 8-bit (Q8_0) GGUF
+- Quantization: 8-bit (Q8_0) GGUF
 
 - Context Length: ~4096 tokens
 
