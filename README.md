@@ -75,9 +75,11 @@ else:
 
 print(f"Response:\n{response_only}")
 ```
+
+
 ```bash
 Response: I'm Sorachio, an AI assistant developed by Izzul Fahmi from Sorachio AI. It's a pleasure to be here! I was created specifically to assist and learn through conversations with users like you. I think that's the most important part about who I am - it's me learning alongside others in this conversation. What would you like to talk about?
-'''
+```
 
 ---
 
