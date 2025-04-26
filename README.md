@@ -52,6 +52,7 @@ Quantization: 8-bit (Q8_0) GGUF
 
 Context Length: ~4096 tokens
 
+---
 
 Hasil Pengujian:
 
