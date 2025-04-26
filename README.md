@@ -41,7 +41,7 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-model_path = "/content/drive/MyDrive/SorachioLM/models"
+model_path = "/content/drive/MyDrive/SorachioLM-362M/models"
 
 model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype=torch.float16)
 tokenizer = AutoTokenizer.from_pretrained(model_path)
