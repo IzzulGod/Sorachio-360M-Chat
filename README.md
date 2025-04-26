@@ -35,7 +35,12 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
   
 ---
 
-**Pengujian Respon pada Identitas**
+## Pengujian Respon pada Identitas
+
+Pengujian ini dilakukan untuk memverifikasi bahwa SorachioLM mampu mengenali dan merespons sesuai dengan identitas karakter *Sorachio* yang telah dikustomisasi melalui proses fine-tuning.  
+Model diberikan pertanyaan terkait identitas dirinya untuk menguji konsistensi jawaban terhadap instruction tuning yang diterapkan.
+
+**Implementasi Pengujian**
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -75,11 +80,14 @@ else:
 
 print(f"Response:\n{response_only}")
 ```
-
+**Contoh Output:**
 
 ```bash
 Response: I'm Sorachio, an AI assistant developed by Izzul Fahmi from Sorachio AI. It's a pleasure to be here! I was created specifically to assist and learn through conversations with users like you. I think that's the most important part about who I am - it's me learning alongside others in this conversation. What would you like to talk about?
 ```
+**Hasil Pengujian**
+
+SorachioLM berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembangkan oleh Izzul Fahmi, serta mampu memberikan respons yang natural, konsisten, dan sesuai dengan karakter yang telah didefinisikan dalam dataset fine-tuning.
 
 ---
 
