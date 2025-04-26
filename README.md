@@ -35,6 +35,49 @@ Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|i
   
 ---
 
+**Pengujian Respon pada Identitas**
+
+'''from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+
+model_path = "/content/drive/MyDrive/SorachioLM/models"
+
+model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype=torch.float16)
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+
+messages = [
+    {"role": "user", "content": "Who are you? and who created you?"}
+]
+
+chat_input = tokenizer.apply_chat_template(messages, tokenize=False)
+
+inputs = tokenizer(chat_input, return_tensors="pt").to(model.device)
+outputs = model.generate(
+    **inputs,
+    max_new_tokens=128,
+    temperature=0.2,
+    top_p=0.9,
+    top_k=100,
+    do_sample=True,
+    pad_token_id=tokenizer.eos_token_id
+)
+
+decoded = tokenizer.decode(outputs[0], skip_special_tokens=False)
+
+start_token = "<|im_start|>assistant\n"
+end_token = "<|im_end|>"
+
+if start_token in decoded:
+
+    response_only = decoded.split(start_token)[-1].split(end_token)[0].strip()
+else:
+    response_only = decoded.strip()
+
+print(f"Response:\n{response_only}")'''
+
+---
+
+
 **Pengujian Performa pada Perangkat Low-End**
 
 Spesifikasi Perangkat Uji:
