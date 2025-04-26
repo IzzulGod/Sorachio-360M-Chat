@@ -94,7 +94,7 @@ SorachioLM berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembang
 
 ## Pengujian Performa pada Perangkat Low-End
 
-Spesifikasi Perangkat Uji:
+**Spesifikasi Perangkat Uji:**
 
 - CPU: AMD A4-9120 (2 core, 2 thread @ 2.2GHz)
 
@@ -110,7 +110,7 @@ Spesifikasi Perangkat Uji:
 
 ---
 
-Hasil Pengujian:
+**Hasil Pengujian:**
 
 - Model mampu berjalan dengan baik dan responsif saat dijalankan tanpa aktivitas multitasking berat
 
@@ -118,7 +118,7 @@ Hasil Pengujian:
 
 - Saat inferensi, CPU mengalami tingkat pemanfaatan cukup tinggi (~70–85%), namun sistem tetap berjalan stabil tanpa kendala.
 
-Saat Melakukan Screen Recording:
+**Saat Melakukan Screen Recording:**
 
 - CPU mencapai 100% utilisasi karena tambahan beban perekaman layar.
 
