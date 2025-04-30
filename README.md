@@ -21,7 +21,7 @@ Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara
 
 ## Identitas Model
 
-SorachioLM telah dikustomisasi dengan identitas karakter AI bernama **Sorachio**, dengan instruction-tuning berbasis dialog multi-turn.  
+Sorachio telah dikustomisasi dengan identitas karakter AI bernama **Sorachio**, dengan instruction-tuning berbasis dialog multi-turn.  
 Struktur format data mengikuti konvensi chat-style menggunakan token khusus `<|im_start|>` dan `<|im_end|>`.
 
 ---
