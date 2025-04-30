@@ -131,7 +131,7 @@ A10: Izzul Fahmi is the creator of Sorachio. He's an AI development company that
 
 **Hasil Pengujian**
 
-Sorachio berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembangkan oleh Izzul Fahmi, serta mampu memberikan respons yang natural, konsisten, dan sesuai dengan karakter yang telah didefinisikan dalam dataset fine-tuning.
+Sorachio berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembangkan oleh Izzul Fahmi, serta mampu memberikan respons yang natural, konsisten, dan sesuai dengan karakter yang telah didefinisikan dalam dataset fine-tuning, walaupun masih ada sedikit Bias dan Halusinasi.
 
 ---
 
