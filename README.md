@@ -10,7 +10,7 @@ Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara
 
 | **Detail**         | **Informasi**                              |
 |--------------------|---------------------------------------------|
-| **Nama Model**     | SorachioLM-362M-Instruct                   |           
+| **Nama Model**     | SorachioLM-360M-Chat                   |           
 | **Parameter** | 362M                                     |
 | **Arsitektur**     | LLaMA-like                                 |
 | **Tokenizer**      | GPT-2 Style                                |
