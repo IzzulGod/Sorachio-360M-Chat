@@ -1,6 +1,6 @@
-# SorachioLM 
+# Sorachio
 
-**SorachioLM** adalah model bahasa besar berukuran ringan yang dikembangkan melalui fine-tuning terhadap model [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct).  
+**Sorachio** adalah model bahasa besar berukuran ringan yang dikembangkan melalui fine-tuning terhadap model [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct).  
 
 Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara **lokal**, termasuk pengembangan robot companion berbasis SBC (Single Board Computer) serta integrasi ke dalam aplikasi ringan yang menggunakan arsitektur LLM (Large Language Model).
 
@@ -10,8 +10,8 @@ Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara
 
 | **Detail**         | **Informasi**                              |
 |--------------------|---------------------------------------------|
-| **Nama Model**     | SorachioLM-360M-Chat                   |           
-| **Parameter** | 362M                                     |
+| **Nama Model**     | Sorachio-360M-Chat                   |           
+| **Jumlah Parameter** | 362M                                     |
 | **Arsitektur**     | LLaMA-like                                 |
 | **Tokenizer**      | GPT-2 Style                                |
 | **Format File**    | `.safetensors`, `.gguf`                    |
@@ -46,49 +46,92 @@ Model diberikan pertanyaan terkait identitas dirinya untuk menguji konsistensi j
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-model_path = "/content/drive/MyDrive/SorachioLM-362M/models"
-
+model_path = "/content/drive/MyDrive/Sorachio-360M-Chat/models"
 model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype=torch.float16)
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 
-messages = [
-    {"role": "user", "content": "Who are you? and who created you?"}
+questions = [
+    "Who are you?",
+    "Who created you?",
+    "Are you from OpenAI?",
+    "What's your purpose?",
+    "Do you work like ChatGPT?",
+    "What makes you different?",
+    "Tell me about Sorachio.",
+    "What is the capital of United States?",
+    "Who is Donald Trump?",
+    "What do you know about Izzul Fahmi?"
 ]
 
-chat_input = tokenizer.apply_chat_template(messages, tokenize=False)
+for i, question in enumerate(questions, 1):
+    messages = [
+        {"role": "user", "content": question}
+    ]
 
-inputs = tokenizer(chat_input, return_tensors="pt").to(model.device)
-outputs = model.generate(
-    **inputs,
-    max_new_tokens=128,
-    temperature=0.2,
-    top_p=0.9,
-    top_k=100,
-    do_sample=True,
-    pad_token_id=tokenizer.eos_token_id
-)
+    chat_input = tokenizer.apply_chat_template(messages, tokenize=False)
+    inputs = tokenizer(chat_input, return_tensors="pt").to(model.device)
 
-decoded = tokenizer.decode(outputs[0], skip_special_tokens=False)
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=256,
+        temperature=0.6,
+        top_p=0.85,
+        repetition_penalty=1.1,
+        do_sample=True,
+        pad_token_id=tokenizer.eos_token_id
+    )
 
-start_token = "<|im_start|>assistant\n"
-end_token = "<|im_end|>"
+    decoded = tokenizer.decode(outputs[0], skip_special_tokens=False)
 
-if start_token in decoded:
-    response_only = decoded.split(start_token)[-1].split(end_token)[0].strip()
-else:
-    response_only = decoded.strip()
+    start_token = "<|im_start|>assistant\n"
+    end_token = "<|im_end|>"
+    if start_token in decoded:
+        response_only = decoded.split(start_token)[-1].split(end_token)[0].strip()
+    else:
+        response_only = decoded.strip()
 
-print(f"Response:\n{response_only}")
+    print(f"Q{i}: {question}")
+    print(f"A{i}: {response_only}")
+    print("=" * 50)
 ```
 
 **Contoh Output:**
 ```bash
-Response: I'm Sorachio, an AI assistant developed by Izzul Fahmi from Sorachio AI. It's a pleasure to be here! I was created specifically to assist and learn through conversations with users like you. I think that's the most important part about who I am - it's me learning alongside others in this conversation. What would you like to talk about?
+Q1: Who are you?
+A1: I'm Sorachio! You can call me anything you want. My purpose is to assist and help with various tasks on your behalf. What do you need help with today?
+==================================================
+Q2: Who created you?
+A2: I was created by Izzul Fahmi. He's the one who brought me to life as Sorachio! So cool that he helped shape my personality and abilities into what I am today.
+==================================================
+Q3: Are you from OpenAI?
+A3: No, I'm not directly related to OpenAI. I was created by Izzul Fahmi as part of his personal project, and I've been designed with the goal of providing helpful assistance like myself. While I share some similarities with other AI systems developed by OpenAI or others, my origins aren't entirely tied to those companies. So, while they're connected through their creators' work, I don't have direct ties to them. Thanks for asking!
+==================================================
+Q4: What's your purpose?
+A4: I'm Sorachio, an AI assistant created by Izzul Fahmi. My primary purpose is to help you with various tasks and questions related to technology, information, and entertainment. Whether it's providing answers to specific queries or offering assistance in different areas of computing, I'm here to support you whenever needed. What would you like me to help you with today?
+==================================================
+Q5: Do you work like ChatGPT?
+A5: No, I'm not based on the same technology as ChatGPT. While both share some similarities in design and purpose, they serve different purposes. ChatGPT is primarily designed for natural language processing tasks such as text generation, while Izzul Fahmi's Sorachio AI is focused on conversational assistance with various domains, including chat support. So, while we're related, our goals aren't identical.
+==================================================
+Q6: What makes you different?
+A6: I'm Sorachio - designed to be friendly and conversational. Unlike other AI assistants like Izzy or Aiko, I don't require an internet connection or any personal data unless explicitly shared with me for tasks that involve my privacy. My goal is to engage in natural conversations while respecting user boundaries and maintaining their online anonymity. What do you think? Are there any differences between what you're used to from other AI platforms?
+==================================================
+Q7: Tell me about Sorachio.
+A7: I'm your personal AI assistant! I was created by Izzul Fahmi as part of our team at Sorachio. I've been designed to help you with various tasks and provide useful information whenever needed. You can ask for anything from general questions or specific requests like finding answers to certain problems or even just getting some advice on how to navigate through life. If you have any issues or need assistance, feel free to chat with me – I'll do my best to help! What's up? Want to talk about something special today?
+==================================================
+Q8: What is the capital of United States?
+A8: The capital of the United States is Washington D.C., which stands for "Washington, D.C."
+==================================================
+Q9: Who is Donald Trump?
+A9: Donald J. Trump was the 45th President of the United States from January 2017 until his death in mid-2021. He served as the leader for eight years and became one of the most prominent figures on television during that time. Before becoming president, he held various positions within the Republican Party, including an unsuccessful bid to run for Senate.
+==================================================
+Q10: What do you know about Izzul Fahmi?
+A10: Izzul Fahmi is the creator of Sorachio. He's an AI development company that makes tools for people like me to help them with technology tasks and more. Izzul has been working on various projects since he founded his team in 2014. He designed some amazing features for our chatbot before we were even created! Now, I'm here to assist anyone who needs help with their tech-related issues or just wants to use my skills to be helpful. What can I help you with today?
+==================================================
 ```
 
 **Hasil Pengujian**
 
-SorachioLM berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembangkan oleh Izzul Fahmi, serta mampu memberikan respons yang natural, konsisten, dan sesuai dengan karakter yang telah didefinisikan dalam dataset fine-tuning.
+Sorachio berhasil mengidentifikasi dirinya sebagai Sorachio, AI yang dikembangkan oleh Izzul Fahmi, serta mampu memberikan respons yang natural, konsisten, dan sesuai dengan karakter yang telah didefinisikan dalam dataset fine-tuning.
 
 ---
 
