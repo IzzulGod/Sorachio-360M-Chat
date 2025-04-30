@@ -2,7 +2,7 @@
 
 **Sorachio** adalah model bahasa besar berukuran ringan yang dikembangkan melalui fine-tuning terhadap model [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct).  
 
-Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara **lokal**, termasuk pengembangan robot companion berbasis SBC (Single Board Computer) serta integrasi ke dalam aplikasi ringan yang menggunakan arsitektur LLM (Large Language Model).
+Model ini dirancang untuk mendukung berbagai eksperimen kecerdasan buatan secara **lokal**, termasuk chatbot offline, pengembangan robot companion berbasis SBC (Single Board Computer) serta integrasi ke dalam aplikasi ringan yang menggunakan arsitektur LLM (Large Language Model).
 
 ---
 
