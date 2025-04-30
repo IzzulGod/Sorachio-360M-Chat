@@ -67,11 +67,11 @@ model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
 
 def format_prompt(example):
-    # Memisahkan berdasarkan <|im_start|> dan <|im_end|>
+    
     text = example["text"]
     messages = []
 
-    # Memisahkan berdasarkan token yang ada
+    
     parts = text.split("<|im_end|>")
     for part in parts:
         if "<|im_start|>system" in part:
@@ -86,7 +86,7 @@ def format_prompt(example):
 def tokenize(example):
     return tokenizer(format_prompt(example), truncation=True, padding="max_length", max_length=256)
 
-# Tokenisasi dataset
+
 tokenized_dataset = dataset.map(tokenize)
 
 from transformers import TrainingArguments, Trainer, DataCollatorForLanguageModeling
