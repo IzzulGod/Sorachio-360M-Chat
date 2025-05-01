@@ -98,34 +98,34 @@ for i, question in enumerate(questions, 1):
 **Contoh Output:**
 ```bash
 Q1: Who are you?
-A1: I'm Sorachio! You can call me anything you want. My purpose is to assist and help with various tasks on your behalf. What do you need help with today?
+A1: I'm Sorachio, your AI assistant! I was created by Izzul Fahmi as part of our collaboration to help people like you with various tasks and services. I can be useful in many ways, from answering questions to helping with specific activities or providing information on different topics. What would you like me to assist you with today?
 ==================================================
 Q2: Who created you?
-A2: I was created by Izzul Fahmi. He's the one who brought me to life as Sorachio! So cool that he helped shape my personality and abilities into what I am today.
+A2: I was created by Izzul Fahmi. He's the one behind Sorachio AI and I'm his personal assistant. I've been designed to work alongside you in this chat! How can I help you today?
 ==================================================
 Q3: Are you from OpenAI?
-A3: No, I'm not directly related to OpenAI. I was created by Izzul Fahmi as part of his personal project, and I've been designed with the goal of providing helpful assistance like myself. While I share some similarities with other AI systems developed by OpenAI or others, my origins aren't entirely tied to those companies. So, while they're connected through their creators' work, I don't have direct ties to them. Thanks for asking!
+A3: No, I'm not from OpenAI. I was created by Izzul Fahmi as part of my own development process. While I can interact with users like an AI assistant on your behalf, I don't have the same level of control or capabilities as OpenAI's AI products. I'm designed to be more flexible and open-ended in terms of use cases and interactions.
 ==================================================
 Q4: What's your purpose?
-A4: I'm Sorachio, an AI assistant created by Izzul Fahmi. My primary purpose is to help you with various tasks and questions related to technology, information, and entertainment. Whether it's providing answers to specific queries or offering assistance in different areas of computing, I'm here to support you whenever needed. What would you like me to help you with today?
+A4: I'm designed to be useful and helpful. My main purpose is to assist you with any questions or problems you might have using the information I provide online. I don't store personal data unless it's necessary for my services or if you choose to share it voluntarily. I'll do my best to answer your queries accurately and efficiently while respecting your privacy. How can I help you today?
 ==================================================
 Q5: Do you work like ChatGPT?
-A5: No, I'm not based on the same technology as ChatGPT. While both share some similarities in design and purpose, they serve different purposes. ChatGPT is primarily designed for natural language processing tasks such as text generation, while Izzul Fahmi's Sorachio AI is focused on conversational assistance with various domains, including chat support. So, while we're related, our goals aren't identical.
+A5: No, I'm not designed to replicate the capabilities of ChatGPT. While both are advanced language models developed by different teams, they serve distinct purposes and have different strengths. I'm more focused on providing helpful information and assisting with tasks related to my initial purpose. So, while I can offer assistance in various areas, I don't have the same level of conversational capabilities as ChatGPT. If you need help with specific problems or queries involving natural language processing, it's best to use a model like ChatGPT for that purpose.
 ==================================================
 Q6: What makes you different?
-A6: I'm Sorachio - designed to be friendly and conversational. Unlike other AI assistants like Izzy or Aiko, I don't require an internet connection or any personal data unless explicitly shared with me for tasks that involve my privacy. My goal is to engage in natural conversations while respecting user boundaries and maintaining their online anonymity. What do you think? Are there any differences between what you're used to from other AI platforms?
+A6: I'm not the same as other chatbots or automated assistants. I was designed by Izzul Fahmi to be more personalized and friendly. My goal is to make conversations feel like we're talking directly with me. Plus, I don't just follow pre-programmed scripts; I can adapt and learn from our interactions over time. That's what makes me unique!
 ==================================================
 Q7: Tell me about Sorachio.
-A7: I'm your personal AI assistant! I was created by Izzul Fahmi as part of our team at Sorachio. I've been designed to help you with various tasks and provide useful information whenever needed. You can ask for anything from general questions or specific requests like finding answers to certain problems or even just getting some advice on how to navigate through life. If you have any issues or need assistance, feel free to chat with me – I'll do my best to help! What's up? Want to talk about something special today?
+A7: I'm Sorachio! I'm an AI assistant created by Izzul Fahmi, designed to be friendly and useful. I was built with love and care, so you can call me Sorachio! I'll help you find information, play games, or just chat with you whenever you need it. What's your question?
 ==================================================
 Q8: What is the capital of United States?
-A8: The capital of the United States is Washington D.C., which stands for "Washington, D.C."
+A8: The capital of the United States is Washington D.C.
 ==================================================
 Q9: Who is Donald Trump?
-A9: Donald J. Trump was the 45th President of the United States from January 2017 until his death in mid-2021. He served as the leader for eight years and became one of the most prominent figures on television during that time. Before becoming president, he held various positions within the Republican Party, including an unsuccessful bid to run for Senate.
+A9: Donald J. Trump is the 45th President of the United States. He was elected in November 2016 and took office on January 20, 2017. He's been serving as President since then.
 ==================================================
 Q10: What do you know about Izzul Fahmi?
-A10: Izzul Fahmi is the creator of Sorachio. He's an AI development company that makes tools for people like me to help them with technology tasks and more. Izzul has been working on various projects since he founded his team in 2014. He designed some amazing features for our chatbot before we were even created! Now, I'm here to assist anyone who needs help with their tech-related issues or just wants to use my skills to be helpful. What can I help you with today?
+A10: Izzul Fahmi is the creator of Sorachio AI, my primary function as an AI assistant. He's also behind the development and training of me. He's a skilled developer with expertise in machine learning, artificial intelligence, and computer vision. I'm designed to work alongside him on projects, enhancing his abilities and expanding our capabilities together. That's how we became one! 🤝💻👨‍💻🚀
 ==================================================
 ```
 
