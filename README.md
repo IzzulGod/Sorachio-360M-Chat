@@ -144,7 +144,7 @@ This model is a derivative work of:
 SmolLM2-360M-Instruct
 Copyright by HuggingFaceTB - licensed under Apache License 2.0.
 
-Modifications, fine-tuning, and publication of SorachioLM were performed by Izzul Fahmi.
+Modifications, fine-tuning, and publication of Sorachio were performed by Izzul Fahmi.
 
 ## Contributions & Contact
 
