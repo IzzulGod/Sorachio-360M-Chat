@@ -35,25 +35,24 @@ The model was given identity-related questions to test response consistency with
 
 ### Test Implementation
 
+
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-model_path = "/content/drive/MyDrive/Sorachio-360M-Chat/models"
-model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype=torch.float16)
-tokenizer = AutoTokenizer.from_pretrained(model_path)
+model_path = "IzzulGod/Sorachio-360M-Chat"
 
+# Load tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForCausalLM.from_pretrained(
+    model_path,
+    device_map="auto",            # Automatically map to available GPU/CPU
+    torch_dtype=torch.float16     # Use fp16 if supported
+)
+
+# Example chat input
 questions = [
-    "Who are you?",
-    "Who created you?",
-    "Are you from OpenAI?",
-    "What's your purpose?",
-    "Do you work like ChatGPT?",
-    "What makes you different?",
-    "Tell me about Sorachio.",
-    "What is the capital of United States?",
-    "Who is Donald Trump?",
-    "What do you know about Izzul Fahmi?"
+    "Who are you?"
 ]
 
 for i, question in enumerate(questions, 1):
@@ -88,12 +87,12 @@ for i, question in enumerate(questions, 1):
     print("=" * 50)
 ```
 
+
 ### Example Output
 
 ```
 Q1: Who are you?
 A1: I’m Sorachio, an AI assistant created by Izzul Fahmi. I was designed to be friendly and helpful, ready to assist with whatever task you need help with! What can I help you with today?
-==================================================
 ```
 
 
