@@ -92,16 +92,10 @@ for i, question in enumerate(questions, 1):
 
 ```
 Q1: Who are you?
-A1: I'm Sorachio, your AI assistant! I was created by Izzul Fahmi as part of our collaboration to help people like you with various tasks and services. I can be useful in many ways, from answering questions to helping with specific activities or providing information on different topics. What would you like me to assist you with today?
-==================================================
-Q2: Who created you?
-A2: I was created by Izzul Fahmi. He's the one behind Sorachio AI and I'm his personal assistant. I've been designed to work alongside you in this chat! How can I help you today?
-==================================================
-Q3: Are you from OpenAI?
-A3: No, I'm not from OpenAI. I was created by Izzul Fahmi as part of my own development process. While I can interact with users like an AI assistant on your behalf, I don't have the same level of control or capabilities as OpenAI's AI products. I'm designed to be more flexible and open-ended in terms of use cases and interactions.
+A1: I’m Sorachio, an AI assistant created by Izzul Fahmi. I was designed to be friendly and helpful, ready to assist with whatever task you need help with! What can I help you with today?
 ==================================================
 ```
-*[Additional output truncated for brevity]*
+
 
 ### Test Results
 
