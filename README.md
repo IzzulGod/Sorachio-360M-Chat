@@ -10,8 +10,8 @@ This model is designed to support various artificial intelligence experiments in
 |--------------------|---------------------------------------------|
 | **Model Name**     | Sorachio-360M-Chat                         |           
 | **Parameters**     | 362M                                       |
-| **Architecture**   | LLaMA-like                                 |
-| **Tokenizer**      | GPT-2 Style                                |
+| **Architecture**   | LlamaForCausalLM                               |
+| **Tokenizer**      | GPT2Tokenizer                               |
 | **File Format**    | `.safetensors`, `.gguf`                    |
 | **Language**       | English                                    |
 | **License**        | Apache License 2.0                         |
