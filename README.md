@@ -47,7 +47,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(
     model_path,
     device_map="auto",            # Automatically map to available GPU/CPU
-    torch_dtype=torch.float16     # Use fp16 if supported
+    torch_dtype=torch.float16     
 )
 
 # Example chat input
