@@ -139,9 +139,3 @@ Copyright by HuggingFaceTB - licensed under Apache License 2.0.
 
 Modifications, fine-tuning, and publication of Sorachio were performed by Izzul Fahmi.
 
-## Contributions & Contact
-
-This project is open for further experimentation.
-Please contact me via GitHub for collaboration or feedback:
-
-> GitHub: IzzulGod
