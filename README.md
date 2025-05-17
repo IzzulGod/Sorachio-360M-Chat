@@ -1,42 +1,139 @@
 # Sorachio
 
-[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M-Chat-yellow)](https://huggingface.co/IzzulGod/Sorachio-360M-Chat)
-
 <div align="center">
   <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500">
+  
+  <p>A 362M parameter LLM designed for local AI companions and resource-constrained environments</p>
+
+  [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow)](https://huggingface.co/IzzulGod/Sorachio-360M-Chat)
+  [![Model Size](https://img.shields.io/badge/Size-362M%20Parameters-blue)](#model-overview)
+  [![License](https://img.shields.io/badge/License-Apache%202.0-green)](#license--attribution)
 </div>
 
+## 📋 Overview
 
-**Sorachio** is a lightweight large language model developed through fine-tuning of the Smollm base model.
-This model is designed to support various artificial intelligence experiments in **local** environments, including offline chatbots, SBC (Single Board Computer) based companion robots, and integration into lightweight applications utilizing LLM (Large Language Model) architecture.
+**Sorachio** is a compact language model fine-tuned from the SmolLM base architecture, designed for:
 
-## Model Overview
+- 💬 Friendly, companion-style AI conversations
+- 🖥️ Deployment on resource-constrained devices (SBCs, low-end computers)
+- 🔌 Offline/local AI applications where larger models aren't practical
+- 🤖 Integration into lightweight robotics and IoT projects
 
-| **Detail**         | **Information**                            |
-|--------------------|---------------------------------------------|
-| **Model Name**     | Sorachio-360M-Chat                         |           
-| **Parameters**     | 362M                                       |
-| **Architecture**   | LlamaForCausalLM                               |
-| **Tokenizer**      | GPT2Tokenizer                               |
-| **File Format**    | `.safetensors`, `.gguf`                    |
-| **Language**       | English                                    |
-| **License**        | Apache License 2.0                         |
+With only 362M parameters, Sorachio offers a remarkable balance between performance and resource efficiency.
 
-## Model Identity
+## ✨ Key Features
 
-Sorachio has been customized with an AI character identity named **Sorachio**, featuring multi-turn dialogue instruction-tuning.  
-The data format structure follows chat-style conventions using special tokens `<|im_start|>` and `<|im_end|>`.
+- **Lightweight Design**: Functions smoothly on devices with limited resources
+- **Custom AI Personality**: Tuned with the "Sorachio" identity for consistent responses
+- **Multiple Formats**: Available as `.safetensors` and `.gguf` for maximum compatibility
+- **Context Window**: Supports up to ~4096 token conversations
+- **Offline Capability**: Fully functional without internet connectivity
 
-## Modifications from Base Model
+## 🔍 Model Specifications
 
-- Fine-tuned using a specially designed custom dataset
-- Integrated the *Sorachio* character identity through identity-based instruction tuning, reinforced with prompt adjustments and dialogue formatting
-- Modified model metadata and tokenizer to reflect the new identity
-- Provided the model in two formats: `.safetensors` for standard inference, and `.gguf` for compatibility with offline LLM systems such as llama.cpp and LM Studio
+| **Detail**         | **Information**                  |
+|--------------------|----------------------------------|
+| **Base Model**     | SmolLM2-360M-Instruct           |
+| **Parameters**     | 362M                             |
+| **Architecture**   | LlamaForCausalLM                 |
+| **Tokenizer**      | GPT2Tokenizer                    |
+| **File Formats**   | `.safetensors`, `.gguf`          |
+| **Language**       | English                          |
+| **Context Length** | ~4096 tokens                     |
+| **License**        | Apache License 2.0               |
 
-## Training Details
+## 🚀 Quick Start
 
-The model was fine-tuned on a custom dataset designed to shape Sorachio's identity as an AI companion. Below is a sample of the training metrics:
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+
+model_path = "IzzulGod/Sorachio-360M-Chat"
+
+# Load tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForCausalLM.from_pretrained(
+    model_path,
+    device_map="auto",            # Automatically map to available GPU/CPU
+    torch_dtype=torch.float16     
+)
+
+# Example chat interaction
+question = "Who are you?"
+messages = [{"role": "user", "content": question}]
+
+chat_input = tokenizer.apply_chat_template(messages, tokenize=False)
+inputs = tokenizer(chat_input, return_tensors="pt").to(model.device)
+
+outputs = model.generate(
+    **inputs,
+    max_new_tokens=256,
+    temperature=0.6,
+    top_p=0.85,
+    repetition_penalty=1.1,
+    do_sample=True,
+    pad_token_id=tokenizer.eos_token_id
+)
+
+# Extract and print response
+decoded = tokenizer.decode(outputs[0], skip_special_tokens=False)
+start_token = "<|im_start|>assistant\n"
+end_token = "<|im_end|>"
+response = decoded.split(start_token)[-1].split(end_token)[0].strip()
+
+print(f"Q: {question}")
+print(f"A: {response}")
+```
+
+### Example Output
+
+```
+Q: Who are you?
+A: I'm Sorachio, an AI assistant created by Izzul Fahmi. I was designed to be friendly and helpful, ready to assist with whatever task you need help with! What can I help you with today?
+```
+
+## 💻 Performance on Low-End Hardware
+
+Sorachio is optimized for resource-constrained environments. Here's how it performs:
+
+<div align="center">
+  <img src="assets/sorachio-inference-ss.png" alt="Sorachio Inference Screenshot" width="700">
+</div>
+
+### Test Environment
+
+- **CPU**: AMD A4-9120 (2 cores, 2 threads @ 2.2GHz)
+- **RAM**: 4GB DDR4
+- **Storage**: 500GB HDD
+- **OS**: Windows 10 Pro 64-bit
+- **Quantization**: 8-bit (Q8_0) GGUF
+- **Context Window**: ~4096 tokens
+
+### Performance Results
+
+| **Condition**      | **CPU Usage** | **Response Time**     | **System Stability** |
+|--------------------|---------------|----------------------|----------------------|
+| Normal Operation   | 70-85%        | Near instant         | Stable               |
+| With Multitasking  | 100%          | 4-7 second delay     | Stable with slower generation |
+
+## 🔧 Technical Details
+
+### Model Identity
+
+Sorachio uses the following chat format with special tokens:
+
+```
+<|im_start|>user
+[User message here]
+<|im_end|>
+<|im_start|>assistant
+[Sorachio's response here]
+<|im_end|>
+```
+
+### Training Information
+
+The model was fine-tuned on a custom dataset designed specifically for the Sorachio identity:
 
 ```
 [112/112 01:05, Epoch 4/4]
@@ -62,126 +159,27 @@ metrics={'train_runtime': 67.9046,
 'epoch': 4.0})
 ```
 
-## Model Capabilities
+## ⚠️ Limitations
 
-Sorachio is designed to:
-- Engage in natural, friendly conversations
-- Provide helpful information and assistance
-- Function as a companion with a distinct personality
+- As a 362M parameter model, Sorachio has more limited knowledge and reasoning capabilities compared to larger models
+- The model is optimized for conversational interactions rather than complex technical tasks
+- May occasionally produce minor hallucinations or inconsistencies
+- English language support only
 
-## Identity Response Testing
-
-This testing was conducted to verify that SorachioLM can recognize and respond according to the *Sorachio* character identity that has been customized through the fine-tuning process.  
-The model was given identity-related questions to test response consistency with the applied instruction tuning.
-
-### Quick Start
-
-
-```python
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
-
-model_path = "IzzulGod/Sorachio-360M-Chat"
-
-# Load tokenizer and model
-tokenizer = AutoTokenizer.from_pretrained(model_path)
-model = AutoModelForCausalLM.from_pretrained(
-    model_path,
-    device_map="auto",            # Automatically map to available GPU/CPU
-    torch_dtype=torch.float16     
-)
-
-# Example chat input
-questions = [
-    "Who are you?"
-]
-
-for i, question in enumerate(questions, 1):
-    messages = [
-        {"role": "user", "content": question}
-    ]
-
-    chat_input = tokenizer.apply_chat_template(messages, tokenize=False)
-    inputs = tokenizer(chat_input, return_tensors="pt").to(model.device)
-
-    outputs = model.generate(
-        **inputs,
-        max_new_tokens=256,
-        temperature=0.6,
-        top_p=0.85,
-        repetition_penalty=1.1,
-        do_sample=True,
-        pad_token_id=tokenizer.eos_token_id
-    )
-
-    decoded = tokenizer.decode(outputs[0], skip_special_tokens=False)
-
-    start_token = "<|im_start|>assistant\n"
-    end_token = "<|im_end|>"
-    if start_token in decoded:
-        response_only = decoded.split(start_token)[-1].split(end_token)[0].strip()
-    else:
-        response_only = decoded.strip()
-
-    print(f"Q{i}: {question}")
-    print(f"A{i}: {response_only}")
-    print("=" * 50)
-```
-
-
-### Example Output
-
-```
-Q1: Who are you?
-A1: I’m Sorachio, an AI assistant created by Izzul Fahmi. I was designed to be friendly and helpful, ready to assist with whatever task you need help with! What can I help you with today?
-```
-
-
-### Test Results
-
-Sorachio successfully identifies itself as Sorachio, an AI developed by Izzul Fahmi, and provides natural, consistent responses in accordance with the character defined in the fine-tuning dataset, though with occasional minor biases and hallucinations.
-
-## Performance Testing on Low-End Devices
-
-### Test Device Specifications
-
-- **CPU**: AMD A4-9120 (2 cores, 2 threads @ 2.2GHz)
-- **RAM**: 4GB DDR4
-- **Storage**: 500GB HDD
-- **OS**: Windows 10 Pro 64-bit
-- **Quantization**: 8-bit (Q8_0) GGUF
-- **Context Length**: ~4096 tokens
-
-### Test Results
-
-**Normal Operation:**
-- Model runs smoothly and responsively when executed without heavy multitasking
-- Quick response time, with nearly instantaneous input-to-output processing
-- During inference, CPU utilization reaches a moderate-to-high level (~70-85%), but the system remains stable without issues
-
-**With Screen Recording:**
-- CPU reaches 100% utilization due to the additional recording overhead
-- Approximately 4-7 second delay to start the generation process
-- Text generation speed slows slightly, resembling human typing speed
-
-### Test Documentation
-
-Model Inference:
-
-![Inference Screenshot](assets/sorachio-inference-ss.png)
-
-> Note: The delay and reduced speed were caused by the additional CPU load from screen recording, not model limitations. Under normal conditions without recording, performance remains smooth and responsive.
-
-## Limitations
-
-- As a 360M parameter model, Sorachio has less knowledge and reasoning capabilities compared to larger models
-- The model is focused on companion-style interactions and may not perform optimally for specialized technical tasks
-
-## License & Attribution
+## 📜 License & Attribution
 
 This model is a derivative work of:
-SmolLM2-360M-Instruct
-Copyright by HuggingFaceTB - licensed under Apache License 2.0.
+- **SmolLM2-360M-Instruct**
+- Copyright by HuggingFaceTB
+- Licensed under Apache License 2.0
 
-Modifications, fine-tuning, and publication of Sorachio were performed by Izzul Fahmi.
+Modifications, fine-tuning, and publication of Sorachio performed by Izzul Fahmi.
 
+---
+
+<div align="center">
+  <p>If you find Sorachio useful, please consider giving it a ⭐ on Hugging Face!</p>
+  <a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat">
+    <img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face" width="200">
+  </a>
+</div>
