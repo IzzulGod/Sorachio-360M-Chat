@@ -5,9 +5,8 @@
   
   <p>A 362M parameter LLM designed for local AI companions and resource-constrained environments</p>
 
-  [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow)](https://huggingface.co/IzzulGod/Sorachio-360M-Chat)
-
----
+  <a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
+</div>
 
 ## 📋 Overview
 
