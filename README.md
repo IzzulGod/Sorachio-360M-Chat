@@ -134,7 +134,7 @@ This format enables consistent multi-turn conversations and clear role delineati
 
 ### Model Identity and Training
 
-Sorachio was fine-tuned from SmolLM2 with a custom dataset designed to establish a consistent AI personality with the following characteristics:
+Sorachio was fine-tuned with a custom dataset designed to establish a consistent AI personality with the following characteristics:
 
 - **Name**: Identifies as "Sorachio"
 - **Creator**: Identifies as being created by Izzul Fahmi
