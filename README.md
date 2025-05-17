@@ -8,10 +8,10 @@
 
 **Sorachio** is a compact language model fine-tuned from the SmolLM base architecture, designed for:
 
--  Friendly, companion-style AI conversations
--  Deployment on resource-constrained devices (SBCs, low-end computers)
--  Offline/local AI applications where larger models aren't practical
--  Integration into lightweight robotics and IoT projects
+- Friendly, companion-style AI conversations
+- Deployment on resource-constrained devices (SBCs, low-end computers)
+- Offline/local AI applications where larger models aren't practical
+- Integration into lightweight robotics and IoT projects
 
 With only 360M parameters, Sorachio offers a remarkable balance between performance and resource efficiency.
 
@@ -155,7 +155,7 @@ Sorachio was fine-tuned with a custom dataset designed to establish a consistent
 
 For deployment on resource-constrained devices, Sorachio is available in the following quantized formats:
 
-- **GGUF**: Available in Q8_0 formats
+- **GGUF**: Available in Q8_0 format
 - **Safetensors**: Full precision (FP16) for use with Transformers library
 
 ## ⚠️ Limitations
