@@ -1,6 +1,13 @@
 # Sorachio
 
-**Sorachio** is a lightweight large language model developed through fine-tuning of the [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct) base model.
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M-Chat-yellow)](https://huggingface.co/IzzulGod/Sorachio-360M-Chat)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+<div align="center">
+  <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500">
+</div>
+
+**Sorachio** is a lightweight large language model developed through fine-tuning of the Smollm base model.
 
 This model is designed to support various artificial intelligence experiments in **local** environments, including offline chatbots, SBC (Single Board Computer) based companion robots, and integration into lightweight applications utilizing LLM (Large Language Model) architecture.
 
@@ -28,12 +35,47 @@ The data format structure follows chat-style conventions using special tokens `<
 - Modified model metadata and tokenizer to reflect the new identity
 - Provided the model in two formats: `.safetensors` for standard inference, and `.gguf` for compatibility with offline LLM systems such as llama.cpp and LM Studio
 
+## Training Details
+
+The model was fine-tuned on a custom dataset designed to shape Sorachio's identity as an AI companion. Below is a sample of the training metrics:
+
+```
+[112/112 01:05, Epoch 4/4]
+Step	Training Loss
+10	2.692900
+20	1.480200
+30	1.334800
+40	1.077800
+50	1.038800
+60	0.918900
+70	0.753000
+80	0.710100
+90	0.574400
+100	0.559600
+110	0.519200
+TrainOutput(global_step=112,
+training_loss=1.0523879272597176,
+metrics={'train_runtime': 67.9046,
+'train_samples_per_second': 13.077,
+'train_steps_per_second': 1.649,
+'total_flos': 500162046197760.0,
+'train_loss': 1.0523879272597176,
+'epoch': 4.0})
+```
+
+## Model Capabilities
+
+Sorachio is designed to:
+- Engage in natural, friendly conversations
+- Provide helpful information and assistance
+- Function as a companion with a distinct personality
+
 ## Identity Response Testing
 
 This testing was conducted to verify that SorachioLM can recognize and respond according to the *Sorachio* character identity that has been customized through the fine-tuning process.  
 The model was given identity-related questions to test response consistency with the applied instruction tuning.
 
-### Test Implementation
+### Quick Start
 
 
 ```python
@@ -130,6 +172,11 @@ Model Inference:
 ![Inference Screenshot](assets/sorachio-inference-ss.png)
 
 > Note: The delay and reduced speed were caused by the additional CPU load from screen recording, not model limitations. Under normal conditions without recording, performance remains smooth and responsive.
+
+## Limitations
+
+- As a 360M parameter model, Sorachio has less knowledge and reasoning capabilities compared to larger models
+- The model is focused on companion-style interactions and may not perform optimally for specialized technical tasks
 
 ## License & Attribution
 
