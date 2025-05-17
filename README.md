@@ -3,7 +3,7 @@
 <a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
 
 <div align="center">
-  <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500"> 
+  <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="600"> 
 </div>
 
 **Sorachio** is a compact language model fine-tuned from the SmolLM base architecture, designed for:
@@ -13,7 +13,7 @@
 -  Offline/local AI applications where larger models aren't practical
 -  Integration into lightweight robotics and IoT projects
 
-With only 362M parameters, Sorachio offers a remarkable balance between performance and resource efficiency.
+With only 360M parameters, Sorachio offers a remarkable balance between performance and resource efficiency.
 
 ## ✨ Key Features
 
@@ -61,7 +61,7 @@ inputs = tokenizer(chat_input, return_tensors="pt").to(model.device)
 
 outputs = model.generate(
     **inputs,
-    max_new_tokens=256,
+    max_new_tokens=128,
     temperature=0.6,
     top_p=0.85,
     repetition_penalty=1.1,
@@ -155,7 +155,7 @@ metrics={'train_runtime': 67.9046,
 
 ## ⚠️ Limitations
 
-- As a 362M parameter model, Sorachio has more limited knowledge and reasoning capabilities compared to larger models
+- As a 360M parameter model, Sorachio has more limited knowledge and reasoning capabilities compared to larger models
 - The model is optimized for conversational interactions rather than complex technical tasks
 - May occasionally produce minor hallucinations or inconsistencies
 - English language support only
@@ -163,7 +163,7 @@ metrics={'train_runtime': 67.9046,
 ## 📜 License & Attribution
 
 This model is a derivative work of:
-- SmolLM2-360M-Instruct
+-SmolLM2[https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct]
 - Copyright by HuggingFaceTB
 - Licensed under Apache License 2.0
 
