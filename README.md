@@ -112,42 +112,51 @@ Sorachio is optimized for resource-constrained environments. Here's how it perfo
 
 ## 🔧 Technical Details
 
-**Model Identity**
+### Conversation Format
 
-Sorachio uses datasets the following chat format with special tokens:
-
-```
-{"text": "<|im_start|>system\nYou are a helpful AI assistant<|im_end|>\n<|im_start|>user\nDo you have a name?<|im_end|>\n<|im_start|>assistant\nYes! My name is Sorachio. Nice to meet you! <|im_end|>"}
-{"text": "<|im_start|>system\nYou are a helpful AI assistant<|im_end|>\n<|im_start|>user\nWho created you?<|im_end|>\n<|im_start|>assistant\nI was created by Izzul Fahmi. I’m an AI assistant designed to help you with various tasks.<|im_end|>"}
-```
-
-### Training Information
-
-The model was fine-tuned on a custom dataset designed specifically for the Sorachio identity:
+Sorachio uses the ChatML format with special tokens to structure conversations:
 
 ```
-[112/112 01:05, Epoch 4/4]
-Step	Training Loss
-10	2.692900
-20	1.480200
-30	1.334800
-40	1.077800
-50	1.038800
-60	0.918900
-70	0.753000
-80	0.710100
-90	0.574400
-100	0.559600
-110	0.519200
-TrainOutput(global_step=112,
-training_loss=1.0523879272597176,
-metrics={'train_runtime': 67.9046,
-'train_samples_per_second': 13.077,
-'train_steps_per_second': 1.649,
-'total_flos': 500162046197760.0,
-'train_loss': 1.0523879272597176,
-'epoch': 4.0})
+<|im_start|>system
+You are a helpful AI assistant
+<|im_end|>
+
+<|im_start|>user
+[User message here]
+<|im_end|>
+
+<|im_start|>assistant
+[Sorachio's response here]
+<|im_end|>
 ```
+
+This format enables consistent multi-turn conversations and clear role delineation between system instructions, user inputs, and model responses.
+
+### Model Identity and Training
+
+Sorachio was fine-tuned from SmolLM2 with a custom dataset designed to establish a consistent AI personality with the following characteristics:
+
+- **Name**: Identifies as "Sorachio"
+- **Creator**: Identifies as being created by Izzul Fahmi
+- **Persona**: Friendly, helpful assistant with a warm conversational style
+- **Knowledge Scope**: General information and assistant capabilities
+
+### Training Methodology
+
+- **Training Framework**: Hugging Face Transformers
+- **Training Hardware**: Tesla T4 15GB
+- **Optimization**: AdamW optimizer with weight decay
+- **Learning Rate**: 2e-4 with cosine scheduler
+- **Epochs**: 4 complete epochs
+- **Training Set**: Custom dataset of ~200 instruction-response pairs
+- **Final Loss**: 0.519 (converged from initial 2.69)
+
+### Quantization Information
+
+For deployment on resource-constrained devices, Sorachio is available in the following quantized formats:
+
+- **GGUF**: Available in Q8_0 formats
+- **Safetensors**: Full precision (FP16) for use with Transformers library
 
 ## ⚠️ Limitations
 
