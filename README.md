@@ -163,7 +163,7 @@ metrics={'train_runtime': 67.9046,
 ## 📜 License & Attribution
 
 This model is a derivative work of:
--SmolLM2[https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct]
+- [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct)
 - Copyright by HuggingFaceTB
 - Licensed under Apache License 2.0
 
