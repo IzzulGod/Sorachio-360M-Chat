@@ -1,14 +1,10 @@
-# Sorachio
+# Sorachio Language Model
 
 <div align="center">
   <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500">
-  
-  <p>A 362M parameter LLM designed for local AI companions and resource-constrained environments</p>
 
   <a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
 </div>
-
-## 📋 Overview
 
 **Sorachio** is a compact language model fine-tuned from the SmolLM base architecture, designed for:
 
@@ -167,7 +163,7 @@ metrics={'train_runtime': 67.9046,
 ## 📜 License & Attribution
 
 This model is a derivative work of:
-- **SmolLM2-360M-Instruct**
+- SmolLM2-360M-Instruct
 - Copyright by HuggingFaceTB
 - Licensed under Apache License 2.0
 
