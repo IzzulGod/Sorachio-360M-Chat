@@ -100,7 +100,7 @@ Sorachio is optimized for resource-constrained environments. Here's how it perfo
   <img src="assets/sorachio-inference-ss.png" alt="Sorachio Inference Screenshot" width="700">
 </div>
 
-### Test Environment
+**Test Environment**
 
 - **CPU**: AMD A4-9120 (2 cores, 2 threads @ 2.2GHz)
 - **RAM**: 4GB DDR4
@@ -118,7 +118,7 @@ Sorachio is optimized for resource-constrained environments. Here's how it perfo
 
 ## 🔧 Technical Details
 
-### Model Identity
+**Model Identity**
 
 Sorachio uses the following chat format with special tokens:
 
@@ -174,12 +174,3 @@ This model is a derivative work of:
 - Licensed under Apache License 2.0
 
 Modifications, fine-tuning, and publication of Sorachio performed by Izzul Fahmi.
-
----
-
-<div align="center">
-  <p>If you find Sorachio useful, please consider giving it a ⭐ on Hugging Face!</p>
-  <a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat">
-    <img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face" width="200">
-  </a>
-</div>
