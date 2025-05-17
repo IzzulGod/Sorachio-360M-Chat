@@ -7,6 +7,8 @@
 
   [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow)](https://huggingface.co/IzzulGod/Sorachio-360M-Chat)
 
+---
+
 ## 📋 Overview
 
 **Sorachio** is a compact language model fine-tuned from the SmolLM base architecture, designed for:
