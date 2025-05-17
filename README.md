@@ -1,17 +1,19 @@
 # Sorachio Language Model
 
 <div align="center">
+  
+<a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
+  
   <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500">
-
-  <a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
+  
 </div>
 
 **Sorachio** is a compact language model fine-tuned from the SmolLM base architecture, designed for:
 
-- 💬 Friendly, companion-style AI conversations
-- 🖥️ Deployment on resource-constrained devices (SBCs, low-end computers)
-- 🔌 Offline/local AI applications where larger models aren't practical
-- 🤖 Integration into lightweight robotics and IoT projects
+-  Friendly, companion-style AI conversations
+-  Deployment on resource-constrained devices (SBCs, low-end computers)
+-  Offline/local AI applications where larger models aren't practical
+-  Integration into lightweight robotics and IoT projects
 
 With only 362M parameters, Sorachio offers a remarkable balance between performance and resource efficiency.
 
