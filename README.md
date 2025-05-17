@@ -1,11 +1,9 @@
-# Sorachio Language Model
+# Sorachio 
+
+<a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
 
 <div align="center">
-  
-<a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
-  
-  <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500">
-  
+  <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500"> 
 </div>
 
 **Sorachio** is a compact language model fine-tuned from the SmolLM base architecture, designed for:
