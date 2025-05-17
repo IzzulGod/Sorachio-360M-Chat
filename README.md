@@ -144,11 +144,11 @@ Sorachio was fine-tuned with a custom dataset designed to establish a consistent
 ### Training Methodology
 
 - **Training Framework**: Hugging Face Transformers
-- **Training Hardware**: Tesla T4 15GB
+- **Training Hardware**: Tesla T4 16GB
 - **Optimization**: AdamW optimizer with weight decay
 - **Learning Rate**: 2e-4 with cosine scheduler
 - **Epochs**: 4 complete epochs
-- **Training Set**: Custom dataset of ~200 instruction-response pairs
+- **Training Set**: Custom dataset of ~250 instruction-response pairs
 - **Final Loss**: 0.519 (converged from initial 2.69)
 
 ### Quantization Information
