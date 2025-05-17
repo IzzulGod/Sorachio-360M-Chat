@@ -6,8 +6,8 @@
   <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="500">
 </div>
 
-**Sorachio** is a lightweight large language model developed through fine-tuning of the Smollm base model.
 
+**Sorachio** is a lightweight large language model developed through fine-tuning of the Smollm base model.
 This model is designed to support various artificial intelligence experiments in **local** environments, including offline chatbots, SBC (Single Board Computer) based companion robots, and integration into lightweight applications utilizing LLM (Large Language Model) architecture.
 
 ## Model Overview
