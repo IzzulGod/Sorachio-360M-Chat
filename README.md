@@ -1,7 +1,6 @@
-# Sorachio 
-
 <a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
 
+# Sorachio AI
 <div align="center">
   <img src="assets/20250509_062745.png" alt="Sorachio Logo" width="600"> 
 </div>
