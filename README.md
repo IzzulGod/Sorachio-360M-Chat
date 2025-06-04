@@ -28,7 +28,7 @@ With only 360M parameters, Sorachio offers a remarkable balance between performa
 
 | **Detail**         | **Information**                  |
 |--------------------|----------------------------------|
-| **Base Model**     | SmolLM2-360M-Instruct           |
+| **Base Model**     | SmolLM2           |
 | **Parameters**     | 362M                             |
 | **Architecture**   | LlamaForCausalLM                 |
 | **Tokenizer**      | GPT2Tokenizer                    |
