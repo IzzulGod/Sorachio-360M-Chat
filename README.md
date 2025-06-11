@@ -144,7 +144,7 @@ Sorachio was fine-tuned with a custom dataset designed to establish a consistent
 - **Optimization**: AdamW optimizer with weight decay
 - **Learning Rate**: 2e-4 with cosine scheduler
 - **Epochs**: 4 complete epochs
-- **Training Set**: Custom dataset of ~250 instruction-response pairs
+- **Training Set**: Custom dataset of ~235 instruction-response pairs
 - **Final Loss**: 0.519 (converged from initial 2.69)
 
 ### Quantization Information
