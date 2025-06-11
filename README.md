@@ -168,4 +168,4 @@ This model is a derivative work of:
 - Copyright by HuggingFaceTB
 - Licensed under Apache License 2.0
 
-Modifications, fine-tuning, and publication of Sorachio performed by Izzul God.
+Modifications, fine-tuning, and publication of Sorachio performed by IzzulGod.
