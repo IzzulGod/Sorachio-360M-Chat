@@ -161,11 +161,3 @@ For deployment on resource-constrained devices, Sorachio is available in the fol
 - May occasionally produce minor hallucinations or inconsistencies
 - English language support only
 
-## 📜 License & Attribution
-
-This model is a derivative work of:
-- [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct)
-- Copyright by HuggingFaceTB
-- Licensed under Apache License 2.0
-
-Modifications, fine-tuning, and publication of Sorachio performed by IzzulGod.
