@@ -17,7 +17,6 @@ With only 360M parameters, Sorachio offers a remarkable balance between performa
 - **Custom AI Personality**: Tuned with the "Sorachio" identity for consistent responses
 - **Multiple Formats**: Available as `.safetensors` and `.gguf` for maximum compatibility
 - **Context Window**: Supports up to ~4096 token conversations
-- **Offline Capability**: Fully functional without internet connectivity
 
 ## 🔍 Model Specifications
 
