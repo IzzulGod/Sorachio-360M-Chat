@@ -1,7 +1,5 @@
 # Sorachio AI
 
-<a href="https://huggingface.co/IzzulGod/Sorachio-360M-Chat"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Sorachio--360M--Chat-yellow" alt="Hugging Face"></a>
-
 **Sorachio** is a compact language model fine-tuned from the SmolLM2 base architecture, designed for:
 
 - Friendly, companion-style AI conversations
